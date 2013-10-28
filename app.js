@@ -1,16 +1,13 @@
 /**
  * Created by SazzSomewhere on 23.10.13.
  */
-var PORT = 10101;
-var HOST = '0.0.0.0';
 var dgram = require('dgram');
 var client = dgram.createSocket('udp4');
 var Speaker = require('speaker');
 var LatencyBuffer = require('./latency_buffer.js');
 var ioClient = require('socket.io-client');
+var config = require('./config.js');
 
-var controlHost = '192.168.1.150';
-var controlPort = 4666;
 
 var speaker = new Speaker({
        channels: 2,
@@ -21,7 +18,7 @@ var speaker = new Speaker({
 client.on('listening', function () {
     var address = client.address();
     console.log('UDP Client listening on ' + address.address + ":" + address.port);
-    client.setBroadcast(true)
+    client.setBroadcast(true);
     client.setMulticastTTL(128);
     client.setMulticastLoopback(true);
 //    client.addMembership('230.185.192.108',HOST);
@@ -29,11 +26,11 @@ client.on('listening', function () {
 
 var bufferStream = new LatencyBuffer(200, speaker);
 
-client.on('message', function (data, remote) {
+client.on('message', function (data) {
     bufferStream.write(data);
 });
 
-client.bind(PORT, HOST);
+client.bind(config.streamPort, config.streamHost);
 
 
 var controlSocket = null;
@@ -47,8 +44,8 @@ socketOptions = {
 };
 
 function createControlSocket() {
-    console.log('[CONTROL] connecting to control host ' + controlHost + ':' + controlPort);
-    controlSocket = ioClient.connect('ws://' + controlHost + ':' + controlPort, socketOptions);
+    console.log('[CONTROL] connecting to control host ' + config.controlHost + ':' + config.controlPort);
+    controlSocket = ioClient.connect('ws://' + config.controlHost + ':' + config.controlPort, socketOptions);
     controlSocket.on('connect', function () {
         console.log('[CONTROL] connected');
         //socket.emit('set nickname', prompt('What is your nickname?'));
@@ -59,14 +56,14 @@ function createControlSocket() {
         socket.on('listen_on', function(data) {
             console.log('[CONTROL] listening on ' + data);
             if ((listening == null) && (client != null)) {
-                client.addMembership(data, HOST);
+                client.addMembership(data, config.streamHost);
                 listening = data;
             }
         });
-        socket.on('listen_off', function(data) {
+        socket.on('listen_off', function() {
             console.log('[CONTROL] stop listening');
             if (listening != null) {
-                client.dropMembership(listening, HOST);
+                client.dropMembership(listening, config.streamHost);
                 listening = null;
             }
         });
@@ -83,13 +80,13 @@ function createControlSocket() {
     controlSocket.on('error', function() {
         reconnectControlSocket();
     });
-};
+}
 
 
 function reconnectControlSocket() {
     setTimeout(function() {
         createControlSocket();
     }, 2500);
-};
+}
 
 createControlSocket();
