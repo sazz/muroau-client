@@ -24,6 +24,10 @@ LatencyBuffer.prototype.setLatency = function(newLatency) {
     this.latency = newLatency;
 };
 
+LatencyBuffer.prototype.getLatency = function() {
+    return this.latency;
+}
+
 LatencyBuffer.prototype.write = function(data) {
     this.writeToBuffer(data);
     var targetData = this.readFromBuffer(data.length);
@@ -39,7 +43,7 @@ LatencyBuffer.prototype.writeToBuffer = function(data) {
     } else {
         var firstPart = bufferToEnd;
         var lastPart = dataLength - firstPart;
-        console.log('writePos: ' + this.writePos + ' firstPart: ' + firstPart + ' lastPart: ' + lastPart + ' dataLength: ' + dataLength + ' bufferSize: ' + this.bufferSize + ' bufferToEnd: ' + bufferToEnd);
+        console.log('readPos: ' + this.readPos + ' writePos: ' + this.writePos + ' firstPart: ' + firstPart + ' lastPart: ' + lastPart + ' dataLength: ' + dataLength + ' bufferSize: ' + this.bufferSize + ' bufferToEnd: ' + bufferToEnd);
         data.copy(this.buffer, this.writePos, 0, firstPart);
         data.copy(this.buffer, 0, firstPart, dataLength);
         this.writePos = lastPart;

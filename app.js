@@ -24,7 +24,7 @@ client.on('listening', function () {
 //    client.addMembership('230.185.192.108',HOST);
 });
 
-var bufferStream = new LatencyBuffer(200, speaker);
+var bufferStream = new LatencyBuffer(config.initialLatency, speaker);
 
 client.on('message', function (data) {
     bufferStream.write(data);
