@@ -5,7 +5,7 @@ var config = {};
 
 config.streamPort = 10101;
 config.streamHost = '0.0.0.0';
-config.controlHost = '192.168.1.150';
+config.controlHost = '192.168.1.101';
 config.controlPort = 4666;
-
+config.name = 'local test client';
 module.exports = config;

@@ -43,31 +43,36 @@ socketOptions = {
     "connect timeout" : 5000
 };
 
+var listening = null;
+
 function createControlSocket() {
     console.log('[CONTROL] connecting to control host ' + config.controlHost + ':' + config.controlPort);
     controlSocket = ioClient.connect('ws://' + config.controlHost + ':' + config.controlPort, socketOptions);
     controlSocket.on('connect', function () {
         console.log('[CONTROL] connected');
+        controlSocket.emit('welcome', {
+            name: config.name
+        });
         //socket.emit('set nickname', prompt('What is your nickname?'));
-        socket.on('set_latency', function(data) {
+        controlSocket.on('set_latency', function(data) {
             console.log('[CONTROL] setting latency to ' + data);
             bufferStream.setLatency(data);
         });
-        socket.on('listen_on', function(data) {
+        controlSocket.on('listen_on', function(data) {
             console.log('[CONTROL] listening on ' + data);
             if ((listening == null) && (client != null)) {
                 client.addMembership(data, config.streamHost);
                 listening = data;
             }
         });
-        socket.on('listen_off', function() {
+        controlSocket.on('listen_off', function() {
             console.log('[CONTROL] stop listening');
             if (listening != null) {
                 client.dropMembership(listening, config.streamHost);
                 listening = null;
             }
         });
-        socket.on('ready', function () {
+        controlSocket.on('ready', function () {
             console.log('[CONTROL] connection ready');
         });
     });
