@@ -44,6 +44,7 @@ socketOptions = {
 };
 
 var listening = null;
+var clientToken = Math.random();
 
 function createControlSocket() {
     console.log('[CONTROL] connecting to control host ' + config.controlHost + ':' + config.controlPort);
@@ -51,7 +52,8 @@ function createControlSocket() {
     controlSocket.on('connect', function () {
         console.log('[CONTROL] connected');
         controlSocket.emit('welcome', {
-            name: config.name
+            name: config.name,
+            clientToken: clientToken
         });
         //socket.emit('set nickname', prompt('What is your nickname?'));
         controlSocket.on('set_latency', function(data) {
@@ -59,17 +61,21 @@ function createControlSocket() {
             bufferStream.setLatency(data);
         });
         controlSocket.on('listen_on', function(data) {
-            console.log('[CONTROL] listening on ' + data);
-            if ((listening == null) && (client != null)) {
-                client.addMembership(data, config.streamHost);
-                listening = data;
+            if (data.clientToken == clientToken) {
+                console.log('[CONTROL] listening on ' + data);
+                if ((listening == null) && (client != null)) {
+                    client.addMembership(data, config.streamHost);
+                    listening = data;
+                }
             }
         });
-        controlSocket.on('listen_off', function() {
-            console.log('[CONTROL] stop listening');
-            if (listening != null) {
-                client.dropMembership(listening, config.streamHost);
-                listening = null;
+        controlSocket.on('listen_off', function(data) {
+            if (data.clientToken == clientToken) {
+                console.log('[CONTROL] stop listening ');
+                if (listening != null) {
+                    client.dropMembership(listening, config.streamHost);
+                    listening = null;
+                }
             }
         });
         controlSocket.on('ready', function () {

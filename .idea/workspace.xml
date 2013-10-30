@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a30b9a3d-1f0a-4886-9d82-b9913b3b6cb2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.js" afterPath="$PROJECT_DIR$/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,25 +30,25 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="306">
+            <state line="9" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="33" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
+            <state line="78" column="0" selection-start="2615" selection-end="2615" vertical-scroll-proportion="0.7183735" vertical-offset="849" max-vertical-offset="1853">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="35" selection-start="160" selection-end="160" vertical-scroll-proportion="0.136" vertical-offset="0" max-vertical-offset="875">
+            <state line="9" column="24" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
@@ -56,7 +57,7 @@
       <file leaf-file-name="latency_buffer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/latency_buffer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="45" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1258">
+            <state line="44" column="45" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0" vertical-offset="607" max-vertical-offset="1258">
               <folding />
             </state>
           </provider>
@@ -81,9 +82,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/latency_buffer.js" />
         <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -168,12 +169,12 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="162" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="165" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="837" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="844" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="837" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="157" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="151" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
@@ -184,14 +185,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.Unnamed">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -200,6 +193,14 @@
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -259,19 +260,23 @@
       <created>1383086766030</created>
       <updated>1383086766030</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update control host">
+      <created>1383126932806</created>
+      <updated>1383126932806</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981302" sideWeight="0.60101867" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3537164" sideWeight="0.7391787" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2608213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3537164" sideWeight="0.76581573" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23418424" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -296,12 +301,41 @@
     <MESSAGE value="added configuration file" />
     <MESSAGE value="bugfixes" />
     <MESSAGE value="added latency as config option" />
-    <option name="LAST_COMMIT_MESSAGE" value="added latency as config option" />
+    <MESSAGE value="update control host" />
+    <option name="LAST_COMMIT_MESSAGE" value="update control host" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="33" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="1751">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="35" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="289">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/latency_buffer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="45" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="1258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="306">
@@ -358,9 +392,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="306">
+        <state line="9" column="24" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <folding />
         </state>
       </provider>
@@ -372,16 +406,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="33" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
+        <state line="9" column="0" selection-start="207" selection-end="207" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="306">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="160" selection-end="160" vertical-scroll-proportion="0.136" vertical-offset="0" max-vertical-offset="875">
+        <state line="78" column="0" selection-start="2615" selection-end="2615" vertical-scroll-proportion="0.7183735" vertical-offset="849" max-vertical-offset="1853">
           <folding />
         </state>
       </provider>
