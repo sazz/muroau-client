@@ -73,7 +73,7 @@ function createControlSocket() {
             if (data.clientToken == clientToken) {
                 console.log('[CONTROL] stop listening ');
                 if (listening != null) {
-                    client.dropMembership(listening, config.streamHost);
+                    client.dropMembership(data.broadcast, config.streamHost);
                     listening = null;
                 }
             }
