@@ -103,7 +103,6 @@ function createControlSocket() {
     controlSocket = ioClient.connect('ws://' + config.controlHost + ':' + config.controlPort, socketOptions);
     ntp.init(controlSocket);
     controlSocket.on('connect', function () {
-        ntpLatency = ntp.offset();
         console.log('[CONTROL] connected');
         controlSocket.emit('welcome', {
             name: config.name,
@@ -159,6 +158,9 @@ function reconnectControlSocket() {
 
 function updateLatency(latency) {
     if (listening == null) {
+        return;
+    }
+    if (config.latencyDisabled == true) {
         return;
     }
     ntpLatency = ntp.offset();
