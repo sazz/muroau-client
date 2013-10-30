@@ -2,7 +2,9 @@
  * Created by SazzSomewhere on 28.10.13.
  */
 function calculateLatency(milliSeconds) {
-    return Math.round(milliSeconds * 44.1 * 2 * 2);
+    var value = Math.round(milliSeconds * 44.1 * 2 * 2);
+    value = value - (value % 4);
+    return value;
 }
 
 var LatencyBuffer = function(initialLatency, targetStream) {
