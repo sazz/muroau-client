@@ -64,7 +64,7 @@ function createControlSocket() {
             if (data.clientToken == clientToken) {
                 console.log('[CONTROL] listening on ' + data);
                 if ((listening == null) && (client != null)) {
-                    client.addMembership(data, config.streamHost);
+                    client.addMembership(data.broadcast, config.streamHost);
                     listening = data;
                 }
             }
