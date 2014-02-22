@@ -53,17 +53,22 @@ if (typeof define === 'function' && define.amd) {
  */
 var dgram = require('dgram');
 var client = dgram.createSocket('udp4');
-var Speaker = require('speaker');
-var LatencyBuffer = require('./latency_buffer.js');
+//var Speaker = require('speaker');
+// var LatencyBuffer = require('./latency_buffer.js');
+var LatencyBuffer = require('./LatencyBuffer.js');
 var ioClient = require('socket.io-client');
 var config = require('./config.js');
+var alsa = require('alsa');
 
-
+/*
 var speaker = new Speaker({
        channels: 2,
         bitDepth: 16,
         sampleRate: 44100
 });
+*/
+
+var speaker = new alsa.Playback('default', 2, 44100, alsa.FORMAT_S16_LE, alsa.ACCESS_RW_INTERLEAVED, 1024)
 
 client.on('listening', function () {
     var address = client.address();
@@ -76,8 +81,14 @@ client.on('listening', function () {
 
 var bufferStream = new LatencyBuffer(config.initialLatency, speaker);
 
+var fs = require('fs');
+var lame = require('lame');
+
+fs.createReadStream('./sprache5_Mv01.mp3').pipe(new lame.Decoder).on('format', console.log).pipe(bufferStream);
+
 client.on('message', function (data) {
-    bufferStream.write(data);
+    console.log("receiving data ");
+    // bufferStream.write(data);
 });
 
 client.bind(config.streamPort, config.streamHost);
@@ -117,7 +128,7 @@ function createControlSocket() {
         });
         controlSocket.on('listen_on', function(data) {
             if (data.clientToken == clientToken) {
-                console.log('[CONTROL] listening on ' + data);
+                console.log('[CONTROL] listening on ' + data + ' ' + listening + ' ' + client);
                 if ((listening == null) && (client != null)) {
                     client.addMembership(data.broadcast, config.streamHost);
                     listening = data;
